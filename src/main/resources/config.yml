@@ -1,0 +1,5 @@
+preferred-version: "1.19.2"
+bad-versions:
+  - 759
+  - 758
+  - 757

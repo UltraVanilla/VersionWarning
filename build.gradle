@@ -1,0 +1,26 @@
+plugins {
+    id "java"
+}
+
+group "lordpipe.versionwarning"
+version "1.0.0"
+
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+
+repositories {
+    mavenCentral()
+    maven { url "https://papermc.io/repo/repository/maven-public/" }
+    maven { url "https://repo.viaversion.com" }
+}
+
+dependencies {
+    compileOnly "io.papermc.paper:paper-api:1.19.2-R0.1-SNAPSHOT"
+    compileOnly "com.viaversion:viaversion-api:4.4.1"
+}
+
+processResources {
+    filesMatching("**/plugin.yml") {
+        expand ( NAME: rootProject.name, VERSION: version, PACKAGE: project.group.toString() )
+    }
+}
