@@ -23,6 +23,7 @@ public class VersionWarning extends JavaPlugin {
 
         List<Integer> badVersions = getConfig().getIntegerList("bad-versions");
         String preferredVersion = getConfig().getString("preferred-version");
+        long warningPeriod = getConfig().getLong("warning-period");
 
         Bukkit.getScheduler().scheduleSyncRepeatingTask(this, () -> {
             for (Player player : Bukkit.getOnlinePlayers()) {
@@ -33,7 +34,7 @@ public class VersionWarning extends JavaPlugin {
                         "<#ee9198>===============================================\n<#e76872>You are logged in using an unsupported version.\nYour experience may be degraded when using this version.\nSwitch to " + preferredVersion + " for optimal experience.\n<#ee9198>==============================================="));
                 }
             }
-        }, 3000, 18000);
+        }, 0, warningPeriod);
     }
 
 }
