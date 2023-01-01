@@ -2,6 +2,23 @@
 
 A spigot plugin to warn users about unsupported Minecraft versions.
 
+## Setup
+
+```yaml
+warning-period: 12000 
+preferred-version: "1.19.3"
+bad-versions:
+  - 760
+  - 759
+  - 758
+  - 757
+banned-versions:
+  756: "1.17.1 is unsupported for technical reasons. To login, please switch to one of the following Minecraft versions:\n\n<#66b366><bold>1.19.3</bold> (recommended)\n<#9f9f9f><bold>1.19.2</bold> (not recomended)\n<#9f9f9f><bold>1.19.1</bold> (not recomended)\n<#ff9f9f><bold>1.18.2</bold> (not recommended, degraded experience)"
+  754: "1.16.4 is unsupported for technical reasons. To login, please switch to one of the following Minecraft versions:\n\n<#66b366><bold>1.19.3</bold> (recommended)\n<#9f9f9f><bold>1.19.2</bold> (not recomended)\n<#9f9f9f><bold>1.19.1</bold> (not recomended)\n<#ff9f9f><bold>1.18.2</bold> (not recommended, degraded experience)"
+```
+
+Counterintuitively, you should REMOVE the viaversion blacklist for any version that you want to ban completely with a custom message. Otherwise, the custom kick message won't be shown.
+
 ## License
 
 Licensed under GPLv3
