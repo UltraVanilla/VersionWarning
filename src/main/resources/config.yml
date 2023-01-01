@@ -6,3 +6,5 @@ bad-versions:
   - 757
   - 756
   - 755
+banned-versions:
+  99994: "test"

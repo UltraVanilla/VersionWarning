@@ -35,6 +35,8 @@ public class VersionWarning extends JavaPlugin {
                 }
             }
         }, 0, warningPeriod);
+
+        getServer().getPluginManager().registerEvents(new JoinListener(this), this);
     }
 
 }

@@ -3,7 +3,7 @@ plugins {
 }
 
 group "lordpipe.versionwarning"
-version "1.0.0"
+version "1.1.0"
 
 sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
@@ -15,12 +15,16 @@ repositories {
 }
 
 dependencies {
-    compileOnly "io.papermc.paper:paper-api:1.19.2-R0.1-SNAPSHOT"
-    compileOnly "com.viaversion:viaversion-api:4.4.1"
+    compileOnly "io.papermc.paper:paper-api:1.19.3-R0.1-SNAPSHOT"
+    compileOnly "com.viaversion:viaversion-api:4.5.1"
 }
 
 processResources {
     filesMatching("**/plugin.yml") {
         expand ( NAME: rootProject.name, VERSION: version, PACKAGE: project.group.toString() )
     }
+}
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs += ["-Xlint:all"]
 }
